@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "2f4778e8-c3fa-4baf-8dbb-9fb2d6e4f708",
+		"name": "VkStat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"codeToGetToken\": \"040fb08db5be30538c\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vkUserId\": \"sergdevguy\",\r\n    \"ownerVkId\": \"683257828\",\r\n    \"period\": 10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/tasks/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tasks",
+						"add"
+					],
+					"query": [
+						{
+							"key": "vkUserId",
+							"value": "sergdevguy",
+							"disabled": true
+						},
+						{
+							"key": "ownerVkId",
+							"value": "683257828",
+							"disabled": true
+						},
+						{
+							"key": "period",
+							"value": "10000",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelTask",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vkUserId\": \"sergdevguy\",\r\n    \"ownerVkId\": \"683257828\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/tasks/cancel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"tasks",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchAll",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vkUserId\": \"sergdevguy\",\r\n    \"ownerVkId\": \"683257828\",\r\n    \"page\": 2,\r\n    \"size\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/checks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"checks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
