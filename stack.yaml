@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  backend:
+    networks:
+      - app-network
+    build: .
+    depends_on:
+      - postgresqldb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresqldb:5432/vkstat
+    container_name: vkStat
+    ports:
+      - "8080:8080"
+  postgresqldb:
+    image: postgres
+    networks:
+      - app-network
+    container_name: postgresqldb
+    environment:
+      POSTGRES_DB: "vkstat"
+      POSTGRES_USER: "pryabykh"
+      POSTGRES_PASSWORD: "pryabykh"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - postgres:/docker-entrypoint-initdb.d
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  postgres:
